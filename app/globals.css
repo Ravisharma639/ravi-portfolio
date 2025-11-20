@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #7c3aed;
+  --glow: rgba(124, 58, 237, 0.14);
+}
+
+/* Enable smooth scroll for navbar clicks */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* Prevents navbar covering sections */
+}
+
+/* Soft gradient background */
+body::before {
+  content: "";
+  position: fixed;
+  left: -10%;
+  top: -20%;
+  width: 60rem;
+  height: 60rem;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(124, 58, 237, 0.18),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(105, 88, 255, 0.12),
+      transparent 25%
+    );
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep all content above gradient background */
+#__next > * {
+  position: relative;
+  z-index: 10;
+}
+
+/* Navbar blur effect */
+nav {
+  backdrop-filter: blur(16px);
+}
+
+/* Accent colors */
+.text-accent {
+  color: var(--accent);
+}
+.bg-accent {
+  background: var(--accent);
+}
+
+/* Glass effect */
+.glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(6px);
+}
+
+/* Card styling */
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.45);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
